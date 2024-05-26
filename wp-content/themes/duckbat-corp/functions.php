@@ -1,10 +1,21 @@
 <?php
+    
+    // Menu
+    function duckbat_menus() {
 
+        $locations = array(
+            'primary'  => __( 'Nav Menu', 'text_domain' ),
+            'footer'   => __( 'Footer Menu', 'text_domain' ),   
+        );
+        register_nav_menus( $locations );
+      }
+    add_action( 'init', 'duckbat_menus' );
 
     // Load styles
     function duckbat_register_styles(){
 
         $version = wp_get_theme()->get( 'Version' );
+        wp_enqueue_style( 'duckbat-style', get_stylesheet_uri() );
         wp_enqueue_style( 'duckbat-style', get_template_directory_uri() . '/style.css', array('duckbat-bootstrap'), $version, 'all' );
         wp_enqueue_style( 'duckbat-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all' );
         wp_enqueue_style( 'duckbat-fontawesome', '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">', array(), '6.0.0', 'all' );
@@ -61,12 +72,12 @@
         add_theme_support( 'html5', array( 'search-form' ) );
     
         // Set the default Post Thumbnail size
-        set_post_thumbnail_size( 200, 200, true ); // 200px wide by 200px high, hard crop mode
+        set_post_thumbnail_size( 300, 300, true ); // 200px wide by 200px high, hard crop mode
     
         // Add custom image sizes
         add_image_size( 'custom-header', 1200, 400, true ); // Custom header size
     
-        // Add menu
+        // Add menu 
         register_nav_menu( 'main-menu', __( 'Main Menu' ) );
     }
     

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container-fluid bg-dark-404">
+<div class="container bg-dark-404" style="min-height: 70vh;">
     <div class="row">
         <div class="col-12">
             <h1 class="display-1">404</h1>

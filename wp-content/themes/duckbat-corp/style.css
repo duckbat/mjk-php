@@ -10,3 +10,23 @@ Author: duckbat
 Text Domain: duckbat
 Author URI: https://github.com/duckbat 
 */
+
+.navbar-nav .nav-item {
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-item :hover {
+    color: red;
+
+}
+
+.footer-nav .nav-item a {
+    color: #a9ccff;
+    text-decoration: none;
+}
+
+.footer-nav .nav-item a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
